@@ -12,7 +12,7 @@ public class ByteWriteToFile {
 	        try {
 	            String strContent = "This example shows how to write byte content to a file";
 	            byte[] byteContent = strContent.getBytes();
-	            File myFile = new File("C:/MyTestFile.txt");
+	            File myFile = new File("C:/Users/MAHI/Desktop/Ravi-Java/BufferInput.text");
 	            // check if file exist, otherwise create the file before writing
 	            if (!myFile.exists()) {
 	                myFile.createNewFile();
