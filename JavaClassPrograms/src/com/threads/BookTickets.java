@@ -1,9 +1,11 @@
 package com.threads;
 
 public class BookTickets {
-public static void main(String[] args) {
+public static void main(String[] args)
+{
 	Object train=new Object();
 	Object compartment=new Object();
+	
 	MyTickets ob1=new MyTickets(train,compartment);
 	CancelTickets ct=new CancelTickets(train,compartment);
 	
@@ -23,7 +25,8 @@ class MyTickets extends Thread
 	}
 	public void run()
 	{
-		System.out.println("Book ticket locked on tain");
+		synchronized (train) {
+		System.out.println("Book ticket locked on train");
 		try
 		{
 			Thread.sleep(150);
@@ -38,6 +41,7 @@ class MyTickets extends Thread
 			System.out.println("Book ticket locked on compartment");
 		}
 	}
+	}
 }
 class CancelTickets extends Thread
 {
@@ -48,7 +52,8 @@ class CancelTickets extends Thread
 	}
 	public void run()
 	{
-		synchronized (comp) {
+		synchronized (train) {
+			
 			System.out.println("Cancel ticket locked on compartment");
 			try{
 				Thread.sleep(200);
@@ -58,7 +63,7 @@ class CancelTickets extends Thread
 				ie.printStackTrace();
 			}
 			System.out.println("Cncel ticket now wainting to lock on train");
-			synchronized (train) {
+			synchronized (comp) {
 				System.out.println("Cancel ticket locked on train");
 				
 			}

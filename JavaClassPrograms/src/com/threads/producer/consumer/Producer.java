@@ -5,7 +5,7 @@ import java.util.List;
 class Producer implements Runnable
 {
    private final List<Integer> taskQueue;
-   private final int           MAX_CAPACITY;
+   private final int MAX_CAPACITY;
  
    public Producer(List<Integer> sharedQueue, int size)
    {
@@ -43,7 +43,7 @@ class Producer implements Runnable
          Thread.sleep(3000);
          taskQueue.add(i);
          System.out.println("Produced: " + i);
-         taskQueue.notifyAll();
+         taskQueue.notify();
       }
    }
 }

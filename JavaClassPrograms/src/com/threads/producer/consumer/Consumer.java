@@ -38,7 +38,7 @@ class Consumer implements Runnable
          Thread.sleep(3000);
          int i = (Integer) taskQueue.remove(0);
          System.out.println("Consumed: " + i);
-         taskQueue.notifyAll();
+         taskQueue.notify();
       }
    }
 }

@@ -14,7 +14,7 @@ public class ThreadPriority extends Thread {
 	                      throws InterruptedException {
 		 
 		 ThreadPriority t1 = new ThreadPriority();
-		   ThreadPriority t2 = new ThreadPriority();
+		 ThreadPriority t2 = new ThreadPriority();
 		  	
 		   t1.start();
 		   t2.start();
