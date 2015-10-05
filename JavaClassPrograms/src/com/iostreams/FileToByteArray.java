@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class FileToByteArray {
 	 public static void main(String a[]){
          
-	        String fileName = "C:/MyFile.txt";
+	        String fileName = "C:/Users/MAHI/Desktop/Ravi-Java/JUNIT";
 	        InputStream is = null;
 	        try {
 	            is = new FileInputStream(fileName);
